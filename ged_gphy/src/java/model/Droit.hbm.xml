@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 oct. 2013 17:01:32 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="model.Droit" table="droit" catalog="ged">
+        <id name="idDroit" type="java.lang.Integer">
+            <column name="id_droit" />
+            <generator class="identity" />
+        </id>
+        <property name="nom" type="string">
+            <column name="nom" length="60" not-null="true" />
+        </property>
+        <set name="documents" inverse="true" table="table_droit">
+            <key>
+                <column name="id_droit" not-null="true" />
+            </key>
+            <many-to-many entity-name="model.Document">
+                <column name="id_doc" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 oct. 2013 17:01:32 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="model.Signataire" table="signataire" catalog="ged">
+        <composite-id name="id" class="model.SignataireId">
+            <key-property name="idDoc" type="int">
+                <column name="id_doc" />
+            </key-property>
+            <key-property name="login" type="string">
+                <column name="login" length="30" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="document" class="model.Document" update="false" insert="false" fetch="select">
+            <column name="id_doc" not-null="true" />
+        </many-to-one>
+        <many-to-one name="utilisateur" class="model.Utilisateur" update="false" insert="false" fetch="select">
+            <column name="login" length="30" not-null="true" />
+        </many-to-one>
+        <property name="validation" type="int">
+            <column name="validation" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
