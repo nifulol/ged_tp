@@ -38,11 +38,11 @@ public class UtilisateurController {
        session.close();
    }
    
-       public Utilisateur getEtudiant() {
+       public Utilisateur getUtilisateur() {
         return user;
     }
 
-    public void setEtudiant(Utilisateur user) {
+    public void setUtilisateur(Utilisateur user) {
         this.user = user;
    
     } 
