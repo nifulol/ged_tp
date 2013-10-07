@@ -38,7 +38,14 @@ public class UtilisateurController {
        session.close();
    }
    
-    
+       public Utilisateur getEtudiant() {
+        return user;
+    }
+
+    public void setEtudiant(Utilisateur user) {
+        this.user = user;
+   
+    } 
     
     
 }
