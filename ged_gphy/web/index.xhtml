@@ -12,13 +12,13 @@
         <p:panel header="Entrer votre LOGIN et votre Mot de passe" style="alignment-baseline: central">
             <h:form>
 
-                <h:panelGrid columns="2" style="margin:  auto  auto">
+                <h:panelGrid columns="2" style="margin: 50px auto 50px auto">
                     <label for="login" >Login:</label>
                     <p:inputText value="#{UtilisateurController.utilisateur.login}" required="true" label="login"/>
                     <label for="password" >Password:</label>
                     <p:inputText value="#{UtilisateurController.utilisateur.password}" required="true" label="password" type="password"/>
                 </h:panelGrid>
-                <p:commandButton value="Valider" action="#{UtilisateurController.affiche()}" ajax="false" style="margin:  auto  auto"/>
+                <p:commandButton value="Valider" action="#{UtilisateurController.connection()}" ajax="false" style="margin:  auto  auto"/>
 
             </h:form>
         </p:panel>
