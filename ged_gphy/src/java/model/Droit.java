@@ -1,5 +1,5 @@
 package model;
-// Generated 2 oct. 2013 17:01:31 by Hibernate Tools 3.2.1.GA
+// Generated 7 oct. 2013 13:38:41 by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -13,7 +13,7 @@ public class Droit  implements java.io.Serializable {
 
      private Integer idDroit;
      private String nom;
-     private Set documents = new HashSet(0);
+     private Set tableDroits = new HashSet(0);
 
     public Droit() {
     }
@@ -22,9 +22,9 @@ public class Droit  implements java.io.Serializable {
     public Droit(String nom) {
         this.nom = nom;
     }
-    public Droit(String nom, Set documents) {
+    public Droit(String nom, Set tableDroits) {
        this.nom = nom;
-       this.documents = documents;
+       this.tableDroits = tableDroits;
     }
    
     public Integer getIdDroit() {
@@ -41,12 +41,12 @@ public class Droit  implements java.io.Serializable {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    public Set getDocuments() {
-        return this.documents;
+    public Set getTableDroits() {
+        return this.tableDroits;
     }
     
-    public void setDocuments(Set documents) {
-        this.documents = documents;
+    public void setTableDroits(Set tableDroits) {
+        this.tableDroits = tableDroits;
     }
 
 

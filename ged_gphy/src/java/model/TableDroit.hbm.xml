@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 7 oct. 2013 13:38:41 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="model.TableDroit" table="table_droit" catalog="ged">
+        <id name="idTabledroit" type="java.lang.Integer">
+            <column name="id_tabledroit" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="droit" class="model.Droit" fetch="select">
+            <column name="id_droit" not-null="true" />
+        </many-to-one>
+        <many-to-one name="document" class="model.Document" fetch="select">
+            <column name="id_docu" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

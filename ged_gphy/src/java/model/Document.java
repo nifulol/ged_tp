@@ -1,5 +1,5 @@
 package model;
-// Generated 2 oct. 2013 17:01:31 by Hibernate Tools 3.2.1.GA
+// Generated 7 oct. 2013 13:38:41 by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -16,7 +16,7 @@ public class Document  implements java.io.Serializable {
      private String adressePhysique;
      private String extension;
      private int taille;
-     private Set droits = new HashSet(0);
+     private Set tableDroits = new HashSet(0);
      private Set signataires = new HashSet(0);
 
     public Document() {
@@ -29,12 +29,12 @@ public class Document  implements java.io.Serializable {
         this.extension = extension;
         this.taille = taille;
     }
-    public Document(String nom, String adressePhysique, String extension, int taille, Set droits, Set signataires) {
+    public Document(String nom, String adressePhysique, String extension, int taille, Set tableDroits, Set signataires) {
        this.nom = nom;
        this.adressePhysique = adressePhysique;
        this.extension = extension;
        this.taille = taille;
-       this.droits = droits;
+       this.tableDroits = tableDroits;
        this.signataires = signataires;
     }
    
@@ -73,12 +73,12 @@ public class Document  implements java.io.Serializable {
     public void setTaille(int taille) {
         this.taille = taille;
     }
-    public Set getDroits() {
-        return this.droits;
+    public Set getTableDroits() {
+        return this.tableDroits;
     }
     
-    public void setDroits(Set droits) {
-        this.droits = droits;
+    public void setTableDroits(Set tableDroits) {
+        this.tableDroits = tableDroits;
     }
     public Set getSignataires() {
         return this.signataires;

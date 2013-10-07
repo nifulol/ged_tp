@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2 oct. 2013 17:01:32 by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 7 oct. 2013 13:38:41 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="model.Document" table="document" catalog="ged">
         <id name="idDoc" type="java.lang.Integer">
@@ -20,13 +20,11 @@
         <property name="taille" type="int">
             <column name="taille" not-null="true" />
         </property>
-        <set name="droits" inverse="false" table="table_droit">
+        <set name="tableDroits" inverse="true">
             <key>
-                <column name="id_doc" not-null="true" />
+                <column name="id_docu" not-null="true" />
             </key>
-            <many-to-many entity-name="model.Droit">
-                <column name="id_droit" not-null="true" />
-            </many-to-many>
+            <one-to-many class="model.TableDroit" />
         </set>
         <set name="signataires" inverse="true">
             <key>
