@@ -24,7 +24,7 @@ public class UtilisateurController {
     {
         this.user=user;
     }
-   public void connection(){
+   public String connection(){
        Session session = HibernateUtil.getSessionFactory().openSession();
        session.beginTransaction();
       
@@ -36,6 +36,7 @@ public class UtilisateurController {
        context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Validé", "Login: "+user.getLogin()+" Prénom : "+user.getPrenom()+"Nom :"+user.getNom()));
         
        session.close();
+       return "index";
    }
    
        public Utilisateur getUtilisateur() {
