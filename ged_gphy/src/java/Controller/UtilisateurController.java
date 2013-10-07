@@ -4,6 +4,8 @@
  */
 package Controller;
 import java.util.List;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import model.Utilisateur;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -30,7 +32,10 @@ public class UtilisateurController {
        List<Utilisateur> List_user = sqlQuery.list();
        user=List_user.get(0);
        
-       
+       FacesContext context = FacesContext.getCurrentInstance();
+       context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Validé", "Login: "+user.getLogin()+" Prénom : "+user.getPrenom()+"Nom :"+user.getNom()));
+        
+       session.close();
    }
    
     
