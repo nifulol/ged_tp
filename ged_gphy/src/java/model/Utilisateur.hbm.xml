@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 7 oct. 2013 13:38:41 by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 7 oct. 2013 18:10:30 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="model.Utilisateur" table="utilisateur" catalog="ged">
         <id name="login" type="string">
@@ -23,6 +23,12 @@
         <property name="service" type="string">
             <column name="service" length="60" not-null="true" />
         </property>
+        <set name="metadonnees" inverse="true">
+            <key>
+                <column name="auteur" length="30" not-null="true" />
+            </key>
+            <one-to-many class="model.Metadonnee" />
+        </set>
         <set name="signataires" inverse="true">
             <key>
                 <column name="login" length="30" not-null="true" />

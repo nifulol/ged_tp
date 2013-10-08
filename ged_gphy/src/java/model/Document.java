@@ -1,5 +1,5 @@
 package model;
-// Generated 7 oct. 2013 13:38:41 by Hibernate Tools 3.2.1.GA
+// Generated 7 oct. 2013 18:10:30 by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -16,8 +16,9 @@ public class Document  implements java.io.Serializable {
      private String adressePhysique;
      private String extension;
      private int taille;
-     private Set tableDroits = new HashSet(0);
-     private Set signataires = new HashSet(0);
+     private Set<TableDroit> tableDroits = new HashSet<TableDroit>(0);
+     private Set<Metadonnee> metadonnees = new HashSet<Metadonnee>(0);
+     private Set<Signataire> signataires = new HashSet<Signataire>(0);
 
     public Document() {
     }
@@ -29,12 +30,13 @@ public class Document  implements java.io.Serializable {
         this.extension = extension;
         this.taille = taille;
     }
-    public Document(String nom, String adressePhysique, String extension, int taille, Set tableDroits, Set signataires) {
+    public Document(String nom, String adressePhysique, String extension, int taille, Set<TableDroit> tableDroits, Set<Metadonnee> metadonnees, Set<Signataire> signataires) {
        this.nom = nom;
        this.adressePhysique = adressePhysique;
        this.extension = extension;
        this.taille = taille;
        this.tableDroits = tableDroits;
+       this.metadonnees = metadonnees;
        this.signataires = signataires;
     }
    
@@ -73,18 +75,25 @@ public class Document  implements java.io.Serializable {
     public void setTaille(int taille) {
         this.taille = taille;
     }
-    public Set getTableDroits() {
+    public Set<TableDroit> getTableDroits() {
         return this.tableDroits;
     }
     
-    public void setTableDroits(Set tableDroits) {
+    public void setTableDroits(Set<TableDroit> tableDroits) {
         this.tableDroits = tableDroits;
     }
-    public Set getSignataires() {
+    public Set<Metadonnee> getMetadonnees() {
+        return this.metadonnees;
+    }
+    
+    public void setMetadonnees(Set<Metadonnee> metadonnees) {
+        this.metadonnees = metadonnees;
+    }
+    public Set<Signataire> getSignataires() {
         return this.signataires;
     }
     
-    public void setSignataires(Set signataires) {
+    public void setSignataires(Set<Signataire> signataires) {
         this.signataires = signataires;
     }
 

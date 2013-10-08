@@ -9,34 +9,27 @@
  *
  * @author Julien Lavigne
  */
-
-
-
-package Controller;
-import helper.HelperUtilisateur;
+package model;
+import java.io.Serializable;
 import java.util.List;
-import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
-import model.Utilisateur;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import util.*;
+
 
 
 /**
  *
  * @author Julien Lavigne
  */
-@Named(value="UtilisateurController")
-@ApplicationScoped
-public class UtilisateurController {
+@Named
+@SessionScoped
+public class UtilisateurController implements Serializable {
 
     
     private Utilisateur user;
-    HelperUtilisateur session;
+    private HelperUtilisateur session;
    
     public UtilisateurController()
     {
@@ -45,12 +38,13 @@ public class UtilisateurController {
     }
    public String connection(){
        
-       List<Utilisateur> List_user = session.helperConnection(user);
-       user=List_user.get(0);
        
-       FacesContext context = FacesContext.getCurrentInstance();
+       List<Utilisateur> users= session.getUser(user);
+       user = users.get(0);
+       
+       /*FacesContext context = FacesContext.getCurrentInstance();
        context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Validé", "Login: "+user.getLogin()+" Prénom : "+user.getPrenom()+"Nom :"+user.getNom()));
-        
+        */
        return "index";
    }
    

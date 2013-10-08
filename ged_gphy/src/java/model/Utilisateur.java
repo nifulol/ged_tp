@@ -1,5 +1,5 @@
 package model;
-// Generated 7 oct. 2013 13:38:41 by Hibernate Tools 3.2.1.GA
+// Generated 7 oct. 2013 18:10:30 by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -17,7 +17,8 @@ public class Utilisateur  implements java.io.Serializable {
      private String nom;
      private String prenom;
      private String service;
-     private Set signataires = new HashSet(0);
+     private Set<Metadonnee> metadonnees = new HashSet<Metadonnee>(0);
+     private Set<Signataire> signataires = new HashSet<Signataire>(0);
 
     public Utilisateur() {
     }
@@ -31,13 +32,14 @@ public class Utilisateur  implements java.io.Serializable {
         this.prenom = prenom;
         this.service = service;
     }
-    public Utilisateur(String login, String password, int idDroit, String nom, String prenom, String service, Set signataires) {
+    public Utilisateur(String login, String password, int idDroit, String nom, String prenom, String service, Set<Metadonnee> metadonnees, Set<Signataire> signataires) {
        this.login = login;
        this.password = password;
        this.idDroit = idDroit;
        this.nom = nom;
        this.prenom = prenom;
        this.service = service;
+       this.metadonnees = metadonnees;
        this.signataires = signataires;
     }
    
@@ -83,11 +85,18 @@ public class Utilisateur  implements java.io.Serializable {
     public void setService(String service) {
         this.service = service;
     }
-    public Set getSignataires() {
+    public Set<Metadonnee> getMetadonnees() {
+        return this.metadonnees;
+    }
+    
+    public void setMetadonnees(Set<Metadonnee> metadonnees) {
+        this.metadonnees = metadonnees;
+    }
+    public Set<Signataire> getSignataires() {
         return this.signataires;
     }
     
-    public void setSignataires(Set signataires) {
+    public void setSignataires(Set<Signataire> signataires) {
         this.signataires = signataires;
     }
 

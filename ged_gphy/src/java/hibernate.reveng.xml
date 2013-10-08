@@ -2,9 +2,10 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="ged"/>
-  <table-filter match-name="signataire"/>
-  <table-filter match-name="utilisateur"/>
   <table-filter match-name="document"/>
-  <table-filter match-name="droit"/>
+  <table-filter match-name="metadonnee"/>
+  <table-filter match-name="utilisateur"/>
   <table-filter match-name="table_droit"/>
+  <table-filter match-name="droit"/>
+  <table-filter match-name="signataire"/>
 </hibernate-reverse-engineering>
